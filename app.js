@@ -11,9 +11,50 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.get('/service/:service/', function(req, res, next) {
+  var service = req.param('service');
   var path = './data/' + req.param('service') + '.json';
   var a = require(path);
-  res.json(a);
+  switch(service){
+     case 'weather' :
+     		 setTimeout(function () {
+    			res.json(a);
+  			 }, 10);
+             break;
+     case 'flightdetails' :
+     		 setTimeout(function () {
+    			res.json(a);
+  			 }, 49);
+             break;
+     case 'profile' :
+     		 setTimeout(function () {
+    			res.json(a);
+  			 }, 118);
+             break;
+     case 'flights' :
+     		 setTimeout(function () {
+    			res.json(a);
+  			 }, 256);
+             break;
+    case 'flightdepartdetails' :
+     		 setTimeout(function () {
+    			res.json(a);
+  			 }, 399);
+             break;
+    case 'airports' :
+     		 setTimeout(function () {
+    			res.json(a);
+  			 }, 681);
+             break;
+    case 'flihthistory' :
+     		 setTimeout(function () {
+    			res.json(a);
+  			 }, 1481);
+             break;
+     default:
+            res.json(a);
+            break;
+  }
+
 });
 
 // catch 404 and forward to error handler
