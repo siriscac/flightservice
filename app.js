@@ -45,7 +45,7 @@ app.get('/service/:service/', function(req, res, next) {
     			res.json(a);
   			 }, 681);
              break;
-    case 'flihthistory' :
+    case 'flighthistory' :
      		 setTimeout(function () {
     			res.json(a);
   			 }, 1481);
